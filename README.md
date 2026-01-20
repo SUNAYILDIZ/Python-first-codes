@@ -1,52 +1,44 @@
-# 🐍 Python Basic Examples
+# 🐍 Python Basic Applications
 
-This repository contains examples written at an introductory level for the Python programming language, covering  
-**basic syntax, output formatting, data type conversions, and arithmetic operations**.
+This repository contains examples of  
+**basic syntax, variables, output formatting, data type conversions, and
+conditional statements** prepared at an introductory level for the Python programming language.
 
-
-The goal is to learn and reinforce the fundamental structures of Python.
+The code is intended for learning and reinforcement purposes.
 
 ---
 
 ## 📌 Contents
 
-This repository contains sample code for the following topics:
+This repository contains examples related to the following Python topics:
 
+- Hello World and basic output
 - Variable declaration (string, int, float)
 - Using the `print()` function
 - `sep` and `end` parameters
 - String unpacking (`*string`)
-- Unicode (`\u`) and Hex (`\x`) character representation
+- Unicode (`\uXXXX`) and Hex (`\xXX`) character representation
 - Data type conversions (type casting)
-  - `int → str`
-  - `float → int`
-- Simple calculations using arithmetic operations
-- Printing calculated results to the screen with meaningful sentences
+- Arithmetic operations
+- Conditional statements (`if – elif – else`)
+- Function usage
+- `if __name__ == “__main__”:` structure
 
 ---
 
-## 🧪 Sample Topics
+## 🧩 Code Structure
 
-### 🔹 Output Formatting
-- Printing characters with special delimiters
-- Printing line by line
-- Displaying text in the desired format
+The code is **in a single Python file**, **divided into functions** by topic.
 
-### 🔹 Data Type Conversions
-- Data type checking with the `type()` function
-- Conversion operations to different data types
+Each function represents a different Python topic:
 
-### 🔹 Calculation Examples
-- Calculating daily and monthly travel expenses
-- Performing simple mathematical operations using numerical values
+- Basic variable and output examples
+- Output formatting (`sep`, `end`)
+- Unicode and Hex character printing
+- Data type conversions
+- Variable usage examples
+- Monthly travel expense calculation
 
----
+The program's execution is controlled by the `if __name__ == “__main__”:` block.
 
-## 🎯 Purpose
-
-This repo is designed for:
-- Beginners in Python
-- University/high school programming courses
-- Exam preparation
-- Those who want to reinforce basic Python logic.
 
