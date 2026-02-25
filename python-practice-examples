@@ -1,0 +1,128 @@
+"""
+FONKSİYONLAR KONUSU
+Bu dosya parametreli fonksiyonlar, varsayılan parametreler,
+*args kullanımı, recursive fonksiyon ve lambda örneklerini içerir.
+"""
+
+
+# -------------------------------------------------
+# 1️⃣ Parametresiz Fonksiyon
+# -------------------------------------------------
+def merhaba():
+    """Parametre almayan basit fonksiyon."""
+    print("Merhaba")
+
+
+# -------------------------------------------------
+# 2️⃣ Parametre Alan Fonksiyon
+# -------------------------------------------------
+def merhaba_isimli(kullanici_ismi):
+    """Tek parametre alan fonksiyon."""
+    print("Merhaba", kullanici_ismi)
+
+
+# -------------------------------------------------
+# 3️⃣ Varsayılan (Default) Parametre
+# -------------------------------------------------
+def merhaba_tekrar(kullanici_ismi, kac_kere=2):
+    """
+    Varsayılan parametre örneği.
+    kac_kere değeri verilmezse 2 olarak alınır.
+    """
+    print(kac_kere * (kullanici_ismi + "\n"))
+
+
+# -------------------------------------------------
+# 4️⃣ Alan Hesaplama Fonksiyonu
+# -------------------------------------------------
+def alan_hesapla(yari_cap, pi_sayisi=3.14):
+    """
+    Dairenin alanını hesaplar.
+    Formül: πr²
+    """
+    return pi_sayisi * (yari_cap ** 2)
+
+
+# -------------------------------------------------
+# 5️⃣ *args Kullanımı
+# -------------------------------------------------
+def merhaba_coklu(*isimler):
+    """
+    İstenildiği kadar isim alabilen fonksiyon (*args).
+    """
+    for isim in isimler:
+        print("Merhaba", isim)
+
+
+# -------------------------------------------------
+# 6️⃣ Recursive (Öz Yinelemeli) Fonksiyon
+# -------------------------------------------------
+def faktoriyel_hesapla(sayi):
+    """
+    Recursive faktöriyel hesaplama.
+    n! = n * (n-1)!
+    """
+    if sayi == 1:
+        return 1
+    else:
+        return sayi * faktoriyel_hesapla(sayi - 1)
+
+
+# -------------------------------------------------
+# 7️⃣ Lambda ve Map Kullanımı
+# -------------------------------------------------
+def lambda_map_example():
+    """
+    Lambda ile kare alma ve map kullanımı.
+    """
+    kare_al = lambda x: x ** 2
+
+    sayilar = [1, 3, 5]
+    sonuc = list(map(kare_al, sayilar))
+
+    print("Kareler:", sonuc)
+
+
+# -------------------------------------------------
+# 8️⃣ Lambda ve Filter Kullanımı
+# -------------------------------------------------
+def lambda_filter_example():
+    """
+    Lambda ile filtreleme işlemi.
+    """
+    numbers = [3, 6, 9, 12, 20]
+    filtreli_liste = list(filter(lambda sayi: sayi > 10, numbers))
+
+    print("10'dan büyük sayılar:", filtreli_liste)
+
+
+# -------------------------------------------------
+# MAIN
+# -------------------------------------------------
+def main():
+    merhaba()
+    print("-" * 40)
+
+    merhaba_isimli("Dijital Beceriler")
+    print("-" * 40)
+
+    merhaba_tekrar("Dijital Beceriler", kac_kere=3)
+    print("-" * 40)
+
+    print("Alan:", alan_hesapla(5))
+    print("-" * 40)
+
+    merhaba_coklu("Tuğba", "Ahmet", "Murat", "Zeynep", "Can")
+    print("-" * 40)
+
+    print("4! =", faktoriyel_hesapla(4))
+    print("-" * 40)
+
+    lambda_map_example()
+    print("-" * 40)
+
+    lambda_filter_example()
+
+
+if __name__ == "__main__":
+    main()
