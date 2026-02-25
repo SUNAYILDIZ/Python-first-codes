@@ -1,0 +1,54 @@
+"""
+Sesli ve Sessiz Harf Sayacı
+
+Bu program kullanıcıdan bir cümle alır.
+Cümledeki her kelime için:
+- Sesli harf sayısını
+- Sessiz harf sayısını
+hesaplar ve ekrana yazdırır.
+"""
+
+
+def harf_say(kelime, sesli_harfler):
+    """
+    Verilen bir kelimedeki sesli ve sessiz harf sayısını hesaplar.
+    Sadece alfabetik karakterler dikkate alınır.
+    """
+    sesli_sayisi = 0
+    sessiz_sayisi = 0
+
+    for harf in kelime:
+        if harf.isalpha():  # Sadece harfleri kontrol eder
+            if harf.lower() in sesli_harfler:
+                sesli_sayisi += 1
+            else:
+                sessiz_sayisi += 1
+
+    return sesli_sayisi, sessiz_sayisi
+
+
+def main():
+    """Programın ana çalışma fonksiyonu."""
+
+    # Türkçe sesli harfler kümesi
+    sesli_harfler = {'a', 'e', 'i', 'o', 'u', 'ı', 'ö', 'ü'}
+
+    # Kullanıcıdan cümle alma
+    cumle = input("Bir cümle girin: ")
+
+    # Cümleyi kelimelere ayırma
+    kelimeler = cumle.split()
+
+    # Her kelime için hesaplama yapma
+    for kelime in kelimeler:
+        sesli, sessiz = harf_say(kelime, sesli_harfler)
+
+        print(
+            f"Kelime: '{kelime}' | "
+            f"Sesli harf sayısı: {sesli} | "
+            f"Sessiz harf sayısı: {sessiz}"
+        )
+
+
+if __name__ == "__main__":
+    main()
