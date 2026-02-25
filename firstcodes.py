@@ -1,111 +1,202 @@
-# You can start learning by first typing "Hello World"
-def hello_and_variables():
-    print("Hello World")
+"""
+TEMEL PYTHON KONULARI
+Bu dosya değişkenler, veri tipleri, string işlemleri,
+listeler, demetler ve sözlükleri örneklerle göstermektedir.
+"""
 
-    a = 5
-    print(a)
+
+# -------------------------------------------------
+# 1️⃣ Değişken Tanımlama ve Yazdırma
+# -------------------------------------------------
+def variables_example():
+    """Farklı veri tiplerinde değişken tanımlama ve yazdırma örnekleri."""
 
     numara = 2018
-    print(numara)
-
     dil = "Python"
-    print(dil)
-
     pi = 3.14
-    print(pi)
 
     sayi = 5
-
-    AdiSoyadi = "Suna Yıldız"
-    Personel_No = 123456789
+    adi_soyadi = "Suna Yıldız"
+    personel_no = 123456789
     kullanici = "Öğrenci"
-    Sayi1 = 10
+    sayi1 = 10
     sayi_2 = 15
-    OGR_NO = 2018123456
-    ogrenciBolum_no = 202313171049
-    sehir = "Aydın"
-    Sehir = "İzmir"
+    ogr_no = 2018123456
+    ogrenci_bolum_no = 202313171049
+    sehir1 = "Aydın"
+    sehir2 = "İzmir"
 
-    print(sayi, AdiSoyadi, Personel_No, kullanici,
-          Sayi1, sayi_2, OGR_NO, ogrenciBolum_no, sehir, Sehir)
+    print(numara, dil, pi)
+    print(sayi, adi_soyadi, personel_no, kullanici,
+          sayi1, sayi_2, ogr_no, ogrenci_bolum_no,
+          sehir1, sehir2)
 
 
-# Demonstrating sep, end and string unpacking
-def print_formatting():
-    print("Çukurova", "Üniversitesi", sep="*")
-    print("P", "y", "t", "h", "o", "n", sep=".")
-    print(*"Python", sep=".")
-    print(*"Çukurova", sep=".")
-    print("bir", "iki", "üç", "dört", "on dört", sep="mumdur", end="mumdur\n")
+# -------------------------------------------------
+# 2️⃣ Print Parametreleri (sep - end)
+# -------------------------------------------------
+def print_parameters():
+    """sep ve end parametrelerinin kullanım örnekleri."""
 
-    ad = "Suna"
-    soyadi = "Yildiz"
-    sehir = "Aydın"
-    yil = 2025
-    print(ad, soyadi, sehir, yil, sep="\n")
-
-    print("Suna\nYıldız\n20 yasinda")
     print("bir", "iki", "üç", sep="\t")
     print("Çukurova", "Üniversitesi", sep="\n\n")
+    print("Summer Internship", end="!\n")
+
+    # String unpacking
+    print(*"Python", sep=".")
+    print(*"Çukurova", sep=".")
 
 
-# Unicode and Hex character printing
-def unicode_and_hex():
-    print("\u0068")
-    print("\x45")
-    print("\u0065")
-    print("\x67")
+# -------------------------------------------------
+# 3️⃣ Unicode ve Hex Karakterler
+# -------------------------------------------------
+def unicode_example():
+    """Unicode ve Hex karakter yazdırma örnekleri."""
+
+    print("\u0068")  # h
+    print("\x45")    # E
+    print("\u0065")  # e
+    print("\x67")    # g
 
 
-# Data type conversion example
-def type_conversion():
-    pi = 3.14
+# -------------------------------------------------
+# 4️⃣ Veri Tipi Dönüşümleri
+# -------------------------------------------------
+def type_conversion_example():
+    """String, float ve int dönüşüm örnekleri."""
+
     a = 45
     a = str(a)
-    print(type(a))
+    print(type(a))  # str
 
+    pi = 3.14
     a = float(pi)
-    print(int(a))
+    print(int(a))   # 3
 
     b = "suna"
     a = b
     print(a)
 
 
-# Variable declaration and printing examples
-def variable_examples():
-    Ad = "Suna"
-    Soyad = "Yıldız"
-    Bölüm = "Bilgisayar Mühendisliği"
-    BölümNo = 202313171049
+# -------------------------------------------------
+# 5️⃣ Matematiksel İşlemler
+# -------------------------------------------------
+def math_operations():
+    """Temel matematik işlemleri örnekleri."""
 
-    print(Ad, Soyad, Bölüm, BölümNo)
-    print(*"ÇukurovaÜniversitesi", sep="_")
+    a = 6 // 2      # Tam sayı bölme
+    b = 6 ** 2      # Üs alma
+    c = ((5 * ((25 % 13) + 100) / (2 * 13)) // 2)
 
-    a = "Adana"
-    b = "Mersin"
-    c = "Hatay"
-    print(a, b, c, sep="\n")
+    print(a)
+    print(b)
+    print(c)
 
 
-# Monthly travel expense calculation
-def travel_expense():
-    Adı = "Suna"
-    Soyadi = "Yıldız"
-    Gidis = 1.5
-    Dönüs = 1.5
-    AyGun = 20
+# -------------------------------------------------
+# 6️⃣ String İşlemleri
+# -------------------------------------------------
+def string_operations():
+    """String uzunluğu ve slicing örnekleri."""
 
-    YolUcret = (Gidis + Dönüs) * AyGun
-    print(Adı, Soyadi, "günde", (Gidis + Dönüs),
-          "TLden", AyGun, "günde aylık yol masrafı",
-          YolUcret, "olmaktadır.")
+    metin = "Dijital Beceriler"
+    metin += " Python Eğitimi"
+    print(metin)
+
+    yazi = "Welcome to Paris"
+    print(len(yazi))     # Uzunluk
+    print(yazi[2:5])     # Parça alma
+
+    name = "Sabahattin"
+    print(name[4:8])
+
+
+# -------------------------------------------------
+# 7️⃣ Listeler
+# -------------------------------------------------
+def list_examples():
+    """Liste işlemleri örnekleri."""
+
+    karma_list = ["Bilişim", 58, "Türkçe", 3.14]
+    print(len(karma_list))
+
+    sayilar = [1,2,3,4,5,6,7,8,9]
+    print(sayilar[0])
+    print(sayilar[-1])
+
+    list1 = [1,2,3]
+    list2 = [4,5,6]
+    print(list1 + list2)
+
+    list3 = [6,7,8,9]
+    print(3 * list3)
+
+    liste = [28,50,65,79,92]
+    liste[3] = 11
+    liste[-3:] = [100,400,500]
+    print(liste)
+
+
+# -------------------------------------------------
+# 8️⃣ Demetler (Tuple)
+# -------------------------------------------------
+def tuple_examples():
+    """Demet işlemleri örnekleri."""
+
+    demet = (1,4,4,4,7,89,8)
+    print(demet.count(4))
+
+    demet1 = ("Python","Arduino","Scratch")
+    print(demet1.index("Scratch"))
+
+
+# -------------------------------------------------
+# 9️⃣ Sözlük (Dictionary)
+# -------------------------------------------------
+def dictionary_examples():
+    """Sözlük veri tipi örnekleri."""
+
+    dictionary = {
+        "Name": "Suna",
+        "Surname": "Yıldız",
+        "Şehir": "Aydın",
+        "Age": 20,
+        "Weight": 52
+    }
+
+    dictionary["Height"] = 160
+    dictionary["Age"] += 1
+
+    print(dictionary.keys())
+    print(dictionary.values())
+    print(dictionary.items())
+
+    for key, value in dictionary.items():
+        print("Anahtar:", key, "Değer:", value)
+
+
+# -------------------------------------------------
+# MAIN
+# -------------------------------------------------
+def main():
+    variables_example()
+    print("-" * 40)
+    print_parameters()
+    print("-" * 40)
+    unicode_example()
+    print("-" * 40)
+    type_conversion_example()
+    print("-" * 40)
+    math_operations()
+    print("-" * 40)
+    string_operations()
+    print("-" * 40)
+    list_examples()
+    print("-" * 40)
+    tuple_examples()
+    print("-" * 40)
+    dictionary_examples()
 
 
 if __name__ == "__main__":
-    hello_and_variables()
-    print_formatting()
-    unicode_and_hex()
-    type_conversion()
-    variable_examples()
-    travel_expense()
+    main()
